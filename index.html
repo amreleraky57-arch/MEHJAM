@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تقرير تدقيق وتحسين موقع Mehjam.com | Website Audit Report</title>
+<meta name="description" content="تقرير تدقيق وتحسين شامل لموقع Mehjam.com يغطي SEO وGEO وتجربة المستخدم والثقة والبحث والأداء — تقرير سري مُعد للعميل.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://example.com/mehjam-audit-report">
+<meta property="og:type" content="website">
+<meta property="og:title" content="تقرير تدقيق وتحسين موقع Mehjam.com">
+<meta property="og:description" content="تقرير سري مُعد للعميل — أهم فرص التحسين في UX وSEO وGEO والثقة والأداء.">
+<meta property="og:locale" content="ar_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="تقرير تدقيق وتحسين موقع Mehjam.com">
+<meta name="twitter:description" content="تقرير سري مُعد للعميل — أهم فرص التحسين في UX وSEO وGEO والثقة والأداء.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "name": "تقرير تدقيق وتحسين موقع Mehjam.com",
+  "description": "تقرير سري يوضح فرص تحسين تجربة المستخدم، البحث، SEO، GEO، الثقة، الأداء، والبيانات التجارية لموقع Mehjam.com",
+  "datePublished": "2026-09-19",
+  "inLanguage": "ar",
+  "about": { "@type": "Organization", "name": "Mehjam" }
+}
+</script>
+<style>
+:root{
+  --bg:#0f1115;
+  --bg-soft:#161922;
+  --surface:#1b1f2a;
+  --surface-2:#20232f;
+  --surface-hover:#232838;
+  --border:rgba(255,255,255,.08);
+  --border-strong:rgba(255,255,255,.14);
+  --text:#eef0f4;
+  --text-dim:#a7adbb;
+  --text-faint:#6b7180;
+  --accent:#8c2829;
+  --accent-2:#c8555a;
+  --gold:#d4a94f;
+  --critical:#e6473f;
+  --high:#e6923f;
+  --medium:#e6d13f;
+  --low:#4f9fe6;
+  --good:#3fbf7f;
+  --radius:18px;
+  --radius-sm:10px;
+  --shadow:0 20px 60px -20px rgba(0,0,0,.6);
+  --font-head:'Tajawal',sans-serif;
+  --font-body:'IBM Plex Sans Arabic',sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth; scroll-padding-top:90px;}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+img{max-width:100%;display:block;-webkit-user-drag:none;user-select:none;pointer-events:none;}
+a{color:inherit;}
+::selection{background:transparent;}
+body.no-select{user-select:none;}
+
+/* background texture */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(1100px 600px at 15% -10%, rgba(140,40,41,.25), transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, rgba(212,169,79,.12), transparent 60%),
+    var(--bg);
+}
+.grain{position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* watermark deterrence */
+.watermark{
+  position:fixed;inset:0;z-index:5;pointer-events:none;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:60px;
+  padding:40px;opacity:.035;transform:rotate(-18deg) scale(1.4);
+}
+.watermark span{
+  font-family:var(--font-head);font-weight:700;font-size:14px;
+  white-space:nowrap;color:#fff;
+}
+
+/* progress bar */
+#scrollbar{position:fixed;top:0;right:0;left:0;height:3px;z-index:1000;background:transparent;}
+#scrollbar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width .1s linear;}
+
+/* header / nav */
+header.topnav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  padding-top:3px;
+  background:rgba(15,17,21,.75);
+  backdrop-filter:blur(14px) saturate(140%);
+  -webkit-backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--border);
+}
+.nav-wrap{
+  max-width:1240px;margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:900;letter-spacing:.5px;}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(140,40,41,.25);}
+.brand small{display:block;font-family:var(--font-body);font-weight:400;color:var(--text-dim);font-size:11px;letter-spacing:0;}
+nav.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
+nav.links::-webkit-scrollbar{display:none;}
+nav.links a{
+  white-space:nowrap;padding:9px 14px;border-radius:999px;font-size:13.5px;
+  color:var(--text-dim);text-decoration:none;transition:.2s;border:1px solid transparent;
+}
+nav.links a:hover,nav.links a:focus-visible{color:var(--text);background:var(--surface-hover);}
+nav.links a.active{color:var(--text);background:var(--surface);border-color:var(--border-strong);}
+.nav-actions{display:flex;gap:8px;align-items:center;}
+.icon-btn{
+  width:38px;height:38px;border-radius:11px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text-dim);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.2s;
+}
+.icon-btn:hover{color:var(--text);border-color:var(--border-strong);}
+.mobile-toggle{display:none;}
+
+@media(max-width:900px){
+  nav.links{display:none;position:fixed;top:64px;right:0;left:0;bottom:0;background:var(--bg);
+    flex-direction:column;padding:18px;z-index:895;overflow-y:auto;}
+  nav.links.open{display:flex;}
+  nav.links a{padding:14px 16px;font-size:15px;border-bottom:1px solid var(--border);border-radius:0;}
+  .mobile-toggle{display:flex;}
+}
+
+/* search-in-report box */
+.report-search{position:relative;}
+.report-search input{
+  width:210px;padding:9px 14px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);font-family:var(--font-body);font-size:13px;outline:none;
+}
+.report-search input:focus{border-color:var(--accent-2);}
+.report-search .results{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);
+  border:1px solid var(--border-strong);border-radius:12px;max-height:320px;overflow:auto;
+  box-shadow:var(--shadow);z-index:50;display:none;
+}
+.report-search .results.show{display:block;}
+.report-search .results a{display:block;padding:10px 14px;font-size:13px;color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--border);}
+.report-search .results a:hover{background:var(--surface-hover);color:var(--text);}
+.report-search .results .empty{padding:14px;color:var(--text-faint);font-size:13px;}
+@media(max-width:900px){.report-search{display:none;}}
+
+/* section base */
+section{padding:90px 24px;position:relative;}
+.wrap{max-width:1180px;margin:0 auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;
+  color:var(--gold);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:14px;
+}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);}
+h2.sec-title{font-family:var(--font-head);font-size:clamp(26px,4vw,40px);font-weight:800;margin:0 0 14px;}
+p.sec-desc{color:var(--text-dim);font-size:16px;max-width:760px;margin:0 0 40px;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 24px 80px;position:relative;}
+.hero .tag{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;
+  border:1px solid var(--border-strong);background:var(--surface);color:var(--text-dim);
+  font-size:13px;margin-bottom:28px;
+}
+.hero .tag b{color:var(--gold);font-weight:700;}
+.hero h1{
+  font-family:var(--font-head);font-weight:900;font-size:clamp(38px,7vw,78px);
+  line-height:1.08;margin:0;background:linear-gradient(180deg,#fff, #cfd3dc 70%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero h1 span{display:block;font-size:.42em;font-weight:600;color:var(--text-dim);
+  -webkit-text-fill-color:var(--text-dim);margin-top:14px;letter-spacing:.5px;}
+.hero .subtitle{margin-top:26px;font-size:18px;color:var(--text-dim);max-width:680px;line-height:1.9;}
+.hero .date{margin-top:18px;font-size:14px;color:var(--gold);font-weight:600;letter-spacing:.3px;}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:42px;}
+.btn{
+  appearance:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:600;
+  font-size:14.5px;padding:14px 26px;border-radius:14px;transition:.25s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#a5363a);color:#fff;box-shadow:0 12px 30px -10px rgba(140,40,41,.6);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(140,40,41,.75);}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--border-strong);}
+.btn-ghost:hover{background:var(--surface-hover);transform:translateY(-2px);}
+.scroll-hint{position:absolute;bottom:34px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--text-faint);font-size:12px;animation:bob 2.4s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+/* KPI cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:980px){.kpi-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.kpi-grid{grid-template-columns:1fr 1fr;}}
+.kpi{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:26px 22px;position:relative;overflow:hidden;transition:.3s;
+}
+.kpi:hover{border-color:var(--border-strong);transform:translateY(-3px);}
+.kpi .num{font-family:var(--font-head);font-weight:900;font-size:38px;line-height:1;}
+.kpi .num small{font-size:16px;color:var(--text-faint);font-weight:600;}
+.kpi .label{margin-top:10px;color:var(--text-dim);font-size:13.5px;}
+.kpi .bar{height:5px;border-radius:99px;background:var(--bg-soft);margin-top:16px;overflow:hidden;}
+.kpi .bar i{display:block;height:100%;border-radius:99px;}
+.kpi.warn .num{color:var(--critical);}
+.kpi.mid .num{color:var(--high);}
+.kpi.ok .num{color:var(--good);}
+.kpi.gold .num{color:var(--gold);}
+
+/* severity overview */
+.sev-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:800px){.sev-grid{grid-template-columns:repeat(2,1fr);}}
+.sev-card{border-radius:var(--radius);padding:26px;border:1px solid var(--border);background:var(--surface);}
+.sev-card .sev-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.sev-dot{width:12px;height:12px;border-radius:50%;}
+.sev-card h4{margin:0;font-family:var(--font-head);font-size:17px;}
+.sev-card p{margin:0;color:var(--text-dim);font-size:13.5px;}
+.sev-card.critical{border-top:3px solid var(--critical);}
+.sev-card.high{border-top:3px solid var(--high);}
+.sev-card.medium{border-top:3px solid var(--medium);}
+.sev-card.low{border-top:3px solid var(--low);}
+
+/* filter bar */
+.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.chip{
+  padding:9px 18px;border-radius:999px;border:1px solid var(--border-strong);
+  background:var(--surface);color:var(--text-dim);font-size:13.5px;cursor:pointer;transition:.2s;font-family:var(--font-body);
+}
+.chip:hover{color:var(--text);}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text);font-weight:600;}
+
+/* issue cards */
+.issues-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+@media(max-width:860px){.issues-grid{grid-template-columns:1fr;}}
+.issue-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px;transition:.3s;
+}
+.issue-card:hover{border-color:var(--border-strong);}
+.issue-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px;}
+.issue-num{font-family:var(--font-head);font-weight:900;font-size:22px;color:var(--text-faint);}
+.badge{padding:5px 12px;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.3px;white-space:nowrap;}
+.badge.critical{background:rgba(230,71,63,.15);color:var(--critical);}
+.badge.high{background:rgba(230,146,63,.15);color:var(--high);}
+.badge.medium{background:rgba(230,209,63,.15);color:#e2c93f;}
+.badge.low{background:rgba(79,159,230,.15);color:var(--low);}
+.issue-card h3{font-family:var(--font-head);font-size:18px;margin:0 0 6px;}
+.issue-cat{font-size:12px;color:var(--gold);margin-bottom:14px;font-weight:600;}
+.issue-card .field{margin-bottom:12px;}
+.issue-card .field b{display:block;font-size:12.5px;color:var(--text-faint);margin-bottom:4px;font-weight:600;}
+.issue-card .field p{margin:0;font-size:14px;color:var(--text-dim);}
+.issue-card details{margin-top:10px;}
+.issue-card summary{cursor:pointer;font-size:13px;color:var(--gold);font-weight:600;list-style:none;}
+.issue-card summary::-webkit-details-marker{display:none;}
+.issue-card summary::after{content:" ▾";}
+.issue-card details[open] summary::after{content:" ▴";}
+
+/* tables */
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:640px;}
+thead th{background:var(--bg-soft);color:var(--text-dim);font-weight:600;padding:14px 16px;text-align:right;font-size:13px;white-space:nowrap;}
+tbody td{padding:14px 16px;border-top:1px solid var(--border);color:var(--text-dim);}
+tbody tr:hover{background:var(--surface-hover);}
+.status-badge{padding:4px 10px;border-radius:8px;font-size:11.5px;font-weight:700;}
+
+/* generic content cards */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:900px){.card-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr;}}
+.mini-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px;}
+.mini-card h4{margin:0 0 8px;font-family:var(--font-head);font-size:15.5px;}
+.mini-card p{margin:0;font-size:13.5px;color:var(--text-dim);}
+.mini-card .tri{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap;}
+.tri span{font-size:11px;padding:3px 9px;border-radius:6px;background:var(--bg-soft);color:var(--text-faint);}
+
+/* score dial */
+.score-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:40px;}
+@media(max-width:800px){.score-row{grid-template-columns:repeat(2,1fr);}}
+.dial-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:center;}
+.dial{width:110px;height:110px;margin:0 auto 14px;position:relative;}
+.dial svg{transform:rotate(-90deg);}
+.dial-val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:800;font-size:20px;}
+.dial-label{font-size:13px;color:var(--text-dim);}
+
+/* trust box */
+.notice{
+  border-radius:var(--radius);padding:26px 28px;border:1px solid rgba(212,169,79,.35);
+  background:linear-gradient(135deg,rgba(212,169,79,.08),rgba(212,169,79,.02));
+  display:flex;gap:16px;align-items:flex-start;
+}
+.notice .ic{font-size:22px;flex-shrink:0;}
+.notice p{margin:0;color:var(--text-dim);font-size:14.5px;}
+.notice b{color:var(--gold);}
+
+/* before after */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:760px){.ba-grid{grid-template-columns:1fr;}}
+.ba-col{border-radius:var(--radius);padding:26px;border:1px solid var(--border);}
+.ba-col.before{background:rgba(230,71,63,.05);border-color:rgba(230,71,63,.25);}
+.ba-col.after{background:rgba(63,191,127,.05);border-color:rgba(63,191,127,.25);}
+.ba-col h4{font-family:var(--font-head);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.ba-col ul{margin:0;padding:0;list-style:none;}
+.ba-col li{padding:10px 0;border-top:1px dashed var(--border);font-size:14.5px;color:var(--text-dim);display:flex;gap:10px;}
+.ba-col li:first-child{border-top:none;}
+.ba-note{margin-top:16px;font-size:12px;color:var(--text-faint);font-style:italic;}
+
+/* roadmap timeline */
+.timeline{position:relative;padding-right:32px;}
+.timeline::before{content:"";position:absolute;right:9px;top:6px;bottom:6px;width:2px;background:var(--border-strong);}
+.tl-item{position:relative;margin-bottom:34px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px 26px;}
+.tl-item::before{content:"";position:absolute;right:-32px;top:26px;width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);}
+.tl-item h4{font-family:var(--font-head);margin:0 0 6px;font-size:19px;color:var(--gold);}
+.tl-item .goal{color:var(--text-dim);font-size:14px;margin-bottom:14px;}
+.tl-item ul{margin:0;padding-inline-start:20px;color:var(--text-dim);font-size:14px;}
+.tl-item li{margin-bottom:6px;}
+.tl-result{margin-top:14px;padding:12px 16px;border-radius:10px;background:var(--bg-soft);font-size:13px;color:var(--text-faint);}
+
+/* screenshots gallery placeholder */
+.gallery-placeholder{
+  border:1.5px dashed var(--border-strong);border-radius:var(--radius);padding:60px 30px;text-align:center;color:var(--text-faint);
+}
+.gallery-placeholder .ic{font-size:34px;margin-bottom:14px;}
+
+/* faq */
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-family:var(--font-head);font-size:16px;}
+.faq-q .plus{color:var(--gold);font-size:20px;transition:.25s;flex-shrink:0;margin-inline-start:16px;}
+.faq-item.open .plus{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--text-dim);font-size:14.5px;}
+.faq-item.open .faq-a{max-height:400px;padding-top:14px;}
+
+/* closing criteria checklist */
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+@media(max-width:700px){.check-grid{grid-template-columns:1fr;}}
+.check-item{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.check-item .c{width:22px;height:22px;border-radius:7px;border:1.5px solid var(--border-strong);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--good);font-size:13px;margin-top:2px;}
+.check-item p{margin:0;font-size:14px;color:var(--text-dim);}
+
+/* footer */
+footer{padding:70px 24px 50px;border-top:1px solid var(--border);text-align:center;}
+footer .fbrand{font-family:var(--font-head);font-weight:900;font-size:20px;margin-bottom:6px;}
+footer .fsub{color:var(--text-dim);font-size:14px;margin-bottom:20px;}
+footer .fmeta{color:var(--text-faint);font-size:12.5px;}
+footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:999px;background:var(--surface);border:1px solid var(--border-strong);font-size:11.5px;letter-spacing:.5px;color:var(--gold);}
+
+/* back to top */
+#toTop{
+  position:fixed;bottom:24px;left:24px;z-index:80;width:46px;height:46px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border-strong);color:var(--text);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;
+  transition:.3s;box-shadow:var(--shadow);
+}
+#toTop.show{opacity:1;pointer-events:auto;}
+
+/* toc */
+.toc{display:flex;flex-wrap:wrap;gap:10px;}
+.toc a{
+  padding:10px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);
+  font-size:13.5px;text-decoration:none;color:var(--text-dim);transition:.2s;
+}
+.toc a:hover{color:var(--text);border-color:var(--border-strong);}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+/* print */
+@media print{
+  body{background:#fff !important;color:#000 !important;}
+  .watermark,#scrollbar,header.topnav,#toTop,.hero-cta,.grain,.mobile-toggle{display:none !important;}
+  section{padding:18px 0 !important; break-inside:avoid;}
+  .kpi,.issue-card,.mini-card,.tl-item,.sev-card,.dial-card,.ba-col,.notice,.check-item{
+    background:#fff !important;border:1px solid #ccc !important;color:#000 !important;box-shadow:none !important;
+    break-inside:avoid;
+  }
+  a{color:#000 !important;text-decoration:underline;}
+  .reveal{opacity:1 !important;transform:none !important;}
+  h1,h2,h3,h4{color:#000 !important;-webkit-text-fill-color:#000 !important;}
+  p,td,th,li{color:#111 !important;}
+  .hero{min-height:auto;padding:20px 0;}
+}
+</style>
+</head>
+<body class="no-select">
+
+<div class="grain"></div>
+<div class="watermark" id="watermark"></div>
+<div id="scrollbar"><i id="scrollbarFill"></i></div>
+
+<header class="topnav">
+  <div class="nav-wrap">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>MEHJAM.COM<small>Audit &amp; Improvement Report</small></div>
+    </div>
+    <nav class="links" id="navLinks">
+      <a href="#overview">نظرة عامة</a>
+      <a href="#issues">المشاكل</a>
+      <a href="#uiux">UI/UX</a>
+      <a href="#search">البحث</a>
+      <a href="#seo">SEO</a>
+      <a href="#geo">GEO</a>
+      <a href="#accessibility">Accessibility</a>
+      <a href="#performance">Performance</a>
+      <a href="#trust">الثقة</a>
+      <a href="#pricing">الأسعار والمنتجات</a>
+      <a href="#roadmap">خطة العمل</a>
+      <a href="#closing">معايير الإغلاق</a>
+      <a href="#faq">أسئلة شائعة</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="report-search">
+        <input type="text" id="searchInput" placeholder="ابحث داخل التقرير…" autocomplete="off">
+        <div class="results" id="searchResults"></div>
+      </div>
+      <button class="icon-btn" id="printBtn" title="طباعة / حفظ PDF" aria-label="طباعة">⎙</button>
+      <button class="icon-btn mobile-toggle" id="menuToggle" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="tag">تقرير سري مُعد للعميل &nbsp;•&nbsp; <b>Mehjam.com</b></div>
+  <h1>MEHJAM.COM<span>تقرير تدقيق وتحسين الموقع &nbsp;—&nbsp; Website Audit &amp; Improvement Report</span></h1>
+  <p class="subtitle">تقرير شامل يوضح أهم فرص التحسين في تجربة المستخدم، البحث، SEO، GEO، الثقة، الأداء، والبيانات التجارية.</p>
+  <div class="date">19 سبتمبر 2026</div>
+  <div class="hero-cta">
+    <a href="#overview" class="btn btn-primary">عرض التقرير</a>
+    <a href="#issues" class="btn btn-ghost">أهم المشاكل</a>
+    <a href="#roadmap" class="btn btn-ghost">خطة العمل</a>
+    <button class="btn btn-ghost" id="printBtn2">طباعة التقرير ⬇</button>
+  </div>
+  <div class="scroll-hint">مرّر للأسفل ↓</div>
+</section>
+
+<!-- ============ OVERVIEW / KPIs ============ -->
+<section id="overview">
+  <div class="wrap">
+    <div class="eyebrow reveal">ملخص تنفيذي</div>
+    <h2 class="sec-title reveal">نظرة عامة على النتائج</h2>
+    <p class="sec-desc reveal">
+      هذه الأرقام مأخوذة كما هي من نتائج التدقيق المتاحة (Ubersuggest وGEO Scan). لا تعني هذه الأرقام أن الموقع غير صالح للاستخدام،
+      لكنها توضح أن هناك مساحة واضحة للتحسين، خصوصًا في الثقة والبيانات وSEO التقني والمحتوى.
+    </p>
+
+    <div class="kpi-grid reveal">
+      <div class="kpi mid"><div class="num">41<small>/100</small></div><div class="label">On-Page SEO Score</div><div class="bar"><i style="width:41%;background:var(--high)"></i></div></div>
+      <div class="kpi mid"><div class="num">56<small>/100</small></div><div class="label">GEO Visibility Score</div><div class="bar"><i style="width:56%;background:var(--high)"></i></div></div>
+      <div class="kpi warn"><div class="num">0<small>/15</small></div><div class="label">Trust Signals</div><div class="bar"><i style="width:0%;background:var(--critical)"></i></div></div>
+      <div class="kpi warn"><div class="num">11<small>/25</small></div><div class="label">Structured Data</div><div class="bar"><i style="width:44%;background:var(--critical)"></i></div></div>
+      <div class="kpi mid"><div class="num">13<small>/20</small></div><div class="label">Content Clarity</div><div class="bar"><i style="width:65%;background:var(--high)"></i></div></div>
+      <div class="kpi gold"><div class="num">150</div><div class="label">Crawled Pages</div><div class="bar"><i style="width:100%;background:var(--gold)"></i></div></div>
+      <div class="kpi mid"><div class="num">17</div><div class="label">Redirected Pages</div><div class="bar"><i style="width:30%;background:var(--high)"></i></div></div>
+      <div class="kpi warn"><div class="num">1</div><div class="label">Broken Page</div><div class="bar"><i style="width:15%;background:var(--critical)"></i></div></div>
+      <div class="kpi warn"><div class="num">110</div><div class="label">Low Word Count Pages</div><div class="bar"><i style="width:73%;background:var(--critical)"></i></div></div>
+      <div class="kpi warn"><div class="num">103</div><div class="label">Duplicate Meta Descriptions</div><div class="bar"><i style="width:69%;background:var(--critical)"></i></div></div>
+      <div class="kpi warn"><div class="num">604</div><div class="label">SEO Issues Reported</div><div class="bar"><i style="width:100%;background:var(--critical)"></i></div></div>
+      <div class="kpi warn"><div class="num">1</div><div class="label">Missing Title Tag</div><div class="bar"><i style="width:15%;background:var(--critical)"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEVERITY OVERVIEW ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">تصنيف الأولويات</div>
+    <h2 class="sec-title reveal">نظرة على مستويات الخطورة</h2>
+    <p class="sec-desc reveal">تُصنَّف المشاكل حسب الأثر المتوقع على الثقة والمبيعات والظهور في البحث. الفئات أدناه توضح طبيعة كل مستوى دون افتراض أعداد غير موثقة.</p>
+    <div class="sev-grid reveal">
+      <div class="sev-card critical">
+        <div class="sev-head"><span class="sev-dot" style="background:var(--critical)"></span><h4>Critical</h4></div>
+        <p>مشاكل تمس الثقة القانونية أو التجارية المباشرة، وتحتاج معالجة فورية قبل أي تحسين آخر.</p>
+      </div>
+      <div class="sev-card high">
+        <div class="sev-head"><span class="sev-dot" style="background:var(--high)"></span><h4>High</h4></div>
+        <p>مشاكل تؤثر بوضوح على SEO أو تجربة المستخدم أو دقة البيانات المعروضة للعميل.</p>
+      </div>
+      <div class="sev-card medium">
+        <div class="sev-head"><span class="sev-dot" style="background:var(--medium)"></span><h4>Medium</h4></div>
+        <p>مشاكل تحسّن الجودة العامة والتنظيم دون تأثير حرج فوري على المبيعات.</p>
+      </div>
+      <div class="sev-card low">
+        <div class="sev-head"><span class="sev-dot" style="background:var(--low)"></span><h4>Low</h4></div>
+        <p>تحسينات تراكمية تفيد على المدى الطويل بعد إنجاز الأولويات الأعلى.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISSUES ============ -->
+<section id="issues">
+  <div class="wrap">
+    <div class="eyebrow reveal">التفاصيل</div>
+    <h2 class="sec-title reveal">أهم المشاكل الحالية</h2>
+    <p class="sec-desc reveal">20 نقطة رئيسية من نتائج التدقيق، مع شرح المشكلة وأهميتها والحل المقترح وطريقة التأكد بعد التنفيذ.</p>
+
+    <div class="filterbar reveal">
+      <button class="chip active" data-filter="all">الكل</button>
+      <button class="chip" data-filter="critical">Critical</button>
+      <button class="chip" data-filter="high">High</button>
+      <button class="chip" data-filter="medium">Medium</button>
+      <button class="chip" data-filter="low">Low</button>
+    </div>
+
+    <div class="issues-grid" id="issuesGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============ UI/UX ============ -->
+<section id="uiux">
+  <div class="wrap">
+    <div class="eyebrow reveal">تجربة الاستخدام</div>
+    <h2 class="sec-title reveal">UI / UX</h2>
+    <p class="sec-desc reveal">مراجعة تجربة المستخدم عبر أهم عناصر الموقع، مع أثر كل مشكلة وحلها المقترح.</p>
+    <div class="card-grid reveal" id="uiuxGrid"></div>
+  </div>
+</section>
+
+<!-- ============ SEARCH ============ -->
+<section id="search">
+  <div class="wrap">
+    <div class="eyebrow reveal">البحث داخل الموقع</div>
+    <h2 class="sec-title reveal">Internal Search UI</h2>
+    <p class="sec-desc reveal">
+      نقطة مهمة جدًا من ناحية تجربة العميل. يجب مراجعة البحث على الهاتف والكمبيوتر، وتسجيل كل حالة اختبار ونتيجتها قبل اعتماد أي إصلاح.
+    </p>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>الحالة</th><th>ما الذي يُختبر</th><th>الحالة الحالية</th></tr></thead>
+        <tbody id="searchTable"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO ============ -->
+<section id="seo">
+  <div class="wrap">
+    <div class="eyebrow reveal">Technical &amp; On-Page</div>
+    <h2 class="sec-title reveal">SEO</h2>
+    <p class="sec-desc reveal">أهم بنود SEO المرصودة في التدقيق، مع حالة كل بند بناءً على الأرقام الواردة في التقرير فقط.</p>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>البند</th><th>التفاصيل</th><th>الحالة</th></tr></thead>
+        <tbody id="seoTable"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GEO ============ -->
+<section id="geo">
+  <div class="wrap">
+    <div class="eyebrow reveal">AI Search Visibility</div>
+    <h2 class="sec-title reveal">GEO — الظهور في محركات البحث المعتمدة على AI</h2>
+    <p class="sec-desc reveal">توضيح مبسّط لماذا تهم هذه النقاط، دون وعد بظهور مضمون في أي نظام ذكاء اصطناعي.</p>
+
+    <div class="score-row reveal">
+      <div class="dial-card"><div class="dial" data-value="56"><svg width="110" height="110"><circle cx="55" cy="55" r="46" stroke="#20222c" stroke-width="10" fill="none"/><circle class="ring" cx="55" cy="55" r="46" stroke="var(--gold)" stroke-width="10" fill="none" stroke-linecap="round"/></svg><div class="dial-val">56/100</div></div><div class="dial-label">GEO Visibility</div></div>
+      <div class="dial-card"><div class="dial" data-value="0" data-max="15"><svg width="110" height="110"><circle cx="55" cy="55" r="46" stroke="#20222c" stroke-width="10" fill="none"/><circle class="ring" cx="55" cy="55" r="46" stroke="var(--critical)" stroke-width="10" fill="none" stroke-linecap="round"/></svg><div class="dial-val">0/15</div></div><div class="dial-label">Trust Signals</div></div>
+      <div class="dial-card"><div class="dial" data-value="13" data-max="20"><svg width="110" height="110"><circle cx="55" cy="55" r="46" stroke="#20222c" stroke-width="10" fill="none"/><circle class="ring" cx="55" cy="55" r="46" stroke="var(--high)" stroke-width="10" fill="none" stroke-linecap="round"/></svg><div class="dial-val">13/20</div></div><div class="dial-label">Content Clarity</div></div>
+      <div class="dial-card"><div class="dial" data-value="11" data-max="25"><svg width="110" height="110"><circle cx="55" cy="55" r="46" stroke="#20222c" stroke-width="10" fill="none"/><circle class="ring" cx="55" cy="55" r="46" stroke="var(--critical)" stroke-width="10" fill="none" stroke-linecap="round"/></svg><div class="dial-val">11/25</div></div><div class="dial-label">Structured Data</div></div>
+    </div>
+
+    <div class="notice reveal">
+      <div class="ic">ⓘ</div>
+      <p>الهدف هو تحسين وضوح الموقع وقابلية فهمه والاستشهاد بمحتواه من قبل محركات البحث وأنظمة الذكاء الاصطناعي. <b>لا يوجد أي ضمان لظهور الموقع في ChatGPT أو Google AI</b> أو أي نظام مشابه — تحسين جودة المعلومات وبنيتها فقط يرفع فرصة فهمها واستخدامها كمصدر.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESSIBILITY ============ -->
+<section id="accessibility">
+  <div class="wrap">
+    <div class="eyebrow reveal">إمكانية الوصول</div>
+    <h2 class="sec-title reveal">Accessibility</h2>
+    <p class="sec-desc reveal">نقاط تفيد جميع المستخدمين وتجعل الموقع أكثر تنظيمًا وقابلية للفهم.</p>
+    <div class="card-grid reveal" id="a11yGrid"></div>
+  </div>
+</section>
+
+<!-- ============ PERFORMANCE ============ -->
+<section id="performance">
+  <div class="wrap">
+    <div class="eyebrow reveal">السرعة</div>
+    <h2 class="sec-title reveal">Performance</h2>
+    <div class="notice reveal">
+      <div class="ic">⏱</div>
+      <p>لا توجد في البيانات الحالية قياسات مكتملة لـ Core Web Vitals يمكن الاعتماد عليها كأرقام نهائية. <b>يحتاج هذا القسم إلى قياس فعلي بعد تنفيذ الإصلاحات.</b></p>
+    </div>
+    <p class="sec-desc reveal" style="margin-top:24px;">إلى حين القياس الفعلي، المقترح هو مراجعة: الصور، JavaScript، CSS، الخطوط، العناصر المكررة (مثل شريط الإعلانات)، ملفات الطرف الثالث، وأخطاء التحميل — ثم مقارنة الأداء قبل وبعد.</p>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section id="trust">
+  <div class="wrap">
+    <div class="eyebrow reveal">الثقة ودقة المعلومات</div>
+    <h2 class="sec-title reveal">الثقة والامتثال</h2>
+    <div class="notice reveal">
+      <div class="ic">⚖</div>
+      <p>ظهرت في المحتوى الحالي عبارات مرتبطة بمشاكل جلدية أو نتائج علاجية، بالإضافة إلى عبارات مرتبطة بالترخيص أو الاعتماد. <b>تحتاج بعض العبارات إلى مراجعة وتوثيق قبل اعتمادها نهائيًا.</b> الهدف هو أن يكون وصف المنتج دقيقًا ومقنعًا من غير مبالغة أو وعود غير موثقة.</p>
+    </div>
+    <div class="card-grid reveal" style="margin-top:24px;">
+      <div class="mini-card"><h4>تصنيف العبارات</h4><p>مراجعة كل عبارة وتصنيفها إلى: معلومة مثبتة يمكن الإبقاء عليها، معلومة تحتاج مستند، أو ادعاء يجب حذفه أو إعادة صياغته.</p></div>
+      <div class="mini-card"><h4>إشارات الثقة</h4><p>نتيجة Trust Signals الحالية 0/15 — نوصي بإظهار وسيلة تواصل حقيقية، بيانات النشاط، والسياسات الأساسية بوضوح.</p></div>
+      <div class="mini-card"><h4>التحقق بعد التعديل</h4><p>مراجعة صفحة المنتج، الرئيسية، الـ Meta، والـ Structured Data بعد تعديل النصوص للتأكد من عدم بقاء نسخ قديمة.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING / PRODUCTS ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="eyebrow reveal">البيانات التجارية</div>
+    <h2 class="sec-title reveal">الأسعار والمنتجات</h2>
+    <p class="sec-desc reveal">تم رصد تعارض في بعض بيانات السعر، وعدم تطابق نسبة الخصم المعروضة مع الحساب الفعلي في بعض الحالات.</p>
+    <div class="table-wrap reveal">
+      <table>
+        <thead><tr><th>العنصر</th><th>الملاحظة</th></tr></thead>
+        <tbody>
+          <tr><td>السعر الأساسي / سعر البيع</td><td>يجب توحيد المصدر والتأكد من التطابق بين ما يظهر للعميل وما هو مسجّل في البيانات التقنية.</td></tr>
+          <tr><td>سعر ما قبل الضريبة</td><td>ظهر تعارض بين سعر ما قبل الضريبة وسعر البيع في بعض الحالات — يحتاج تصحيحًا.</td></tr>
+          <tr><td>نسبة الخصم المعروضة</td><td>يجب أن تكون النسبة المعروضة ناتجة فعلًا عن السعرين المستخدمين لتفادي الالتباس.</td></tr>
+          <tr><td>Structured Data الخاصة بالسعر</td><td>يجب أن تطابق بيانات الـ Schema ما هو ظاهر فعليًا للعميل.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="ba-note reveal" style="margin-top:14px;">طريقة التأكد: اختبار عدة منتجات وليس منتجًا واحدًا، ومقارنة كل الأرقام بين صفحة المنتج والسلة والبيانات المنظمة.</p>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">التصور المستهدف</div>
+    <h2 class="sec-title reveal">قبل / بعد</h2>
+    <p class="sec-desc reveal">توضيح الفرق المستهدف بعد التنفيذ — وليس نتائج مُحقَّقة بالفعل.</p>
+    <div class="ba-grid reveal">
+      <div class="ba-col before">
+        <h4>🔴 الوضع الحالي</h4>
+        <ul>
+          <li>معلومات أقل وضوحًا حول التواصل والسياسات</li>
+          <li>تعارض في بعض بيانات السعر والخصم</li>
+          <li>Metadata مكررة على عدد كبير من الصفحات</li>
+          <li>تجربة البحث تحتاج مراجعة واختبار</li>
+          <li>إشارات الثقة ضعيفة جدًا (0/15)</li>
+        </ul>
+      </div>
+      <div class="ba-col after">
+        <h4>🟢 النتيجة المستهدفة بعد التنفيذ</h4>
+        <ul>
+          <li>معلومات تواصل وسياسات أوضح وأسهل وصولًا</li>
+          <li>بيانات سعر وخصم موحدة ومتطابقة في كل مكان</li>
+          <li>SEO أنظف بمحتوى وميتاداتا فريدة لكل صفحة مهمة</li>
+          <li>تجربة بحث مُختبرة وموثّقة النتائج</li>
+          <li>إشارات ثقة أقوى مبنية على معلومات حقيقية</li>
+        </ul>
+        <div class="ba-note">النتيجة المستهدفة بعد التنفيذ — وليست نتائج تم تحقيقها فعليًا.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREENSHOTS ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">أدلة بصرية</div>
+    <h2 class="sec-title reveal">Screenshots</h2>
+    <div class="gallery-placeholder reveal">
+      <div class="ic">🖼</div>
+      <p>سيتم إضافة Screenshots بعد توثيق الإصلاحات.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="eyebrow reveal">خطة العمل</div>
+    <h2 class="sec-title reveal">Roadmap</h2>
+    <p class="sec-desc reveal">أربع مراحل مرتبة حسب الأولوية والتأثير، بدءًا من أكثر النقاط حساسية.</p>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <h4>المرحلة 1 — الأولويات العاجلة</h4>
+        <div class="goal">الهدف: معالجة النقاط الأكثر حساسية من ناحية الثقة والدقة قبل أي تحسين آخر.</div>
+        <ul>
+          <li>مراجعة جميع الادعاءات المتعلقة بالمنتجات</li>
+          <li>تصحيح بيانات السعر والخصم والضريبة</li>
+          <li>تحسين بيانات التواصل والسياسات</li>
+          <li>إصلاح الصفحة التي لا تحتوي على Title</li>
+          <li>إصلاح الروابط الفارغة</li>
+        </ul>
+        <div class="tl-result">النتيجة المتوقعة: أساس أكثر أمانًا وموثوقية للبدء في التحسينات التالية.</div>
+      </div>
+      <div class="tl-item">
+        <h4>المرحلة 2 — SEO وTechnical</h4>
+        <div class="goal">الهدف: تنظيف البنية التقنية لمحركات البحث.</div>
+        <ul>
+          <li>تحسين Titles</li>
+          <li>معالجة Meta Descriptions المكررة</li>
+          <li>توحيد الروابط وCanonical</li>
+          <li>معالجة الـ Redirects الداخلية</li>
+          <li>مراجعة الصور وAlt Text</li>
+          <li>معالجة الصفحات منخفضة القيمة والوسوم</li>
+          <li>إصلاح Structured Data</li>
+        </ul>
+        <div class="tl-result">النتيجة المتوقعة: تحسّن تدريجي في نتيجة On-Page SEO وانخفاض في عدد المشاكل المرصودة.</div>
+      </div>
+      <div class="tl-item">
+        <h4>المرحلة 3 — تجربة المستخدم</h4>
+        <div class="goal">الهدف: تجربة استخدام أوضح على الهاتف والكمبيوتر.</div>
+        <ul>
+          <li>مراجعة Search</li>
+          <li>تحسين Mobile UX</li>
+          <li>تحسين Product Pages</li>
+          <li>مراجعة Cart وCheckout</li>
+          <li>تحسين حالات الخطأ والتحميل</li>
+        </ul>
+        <div class="tl-result">النتيجة المتوقعة: انخفاض نقاط الاحتكاك في رحلة الشراء.</div>
+      </div>
+      <div class="tl-item">
+        <h4>المرحلة 4 — تحسين طويل المدى</h4>
+        <div class="goal">الهدف: بناء أساس مستدام للنمو.</div>
+        <ul>
+          <li>تطوير المحتوى</li>
+          <li>تحسين GEO</li>
+          <li>تحسين الأداء</li>
+          <li>تطوير Analytics</li>
+          <li>إعادة التدقيق وقياس النتائج</li>
+        </ul>
+        <div class="tl-result">النتيجة المتوقعة: تحسّن مستمر مبني على قياس فعلي بعد كل مرحلة.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING CRITERIA ============ -->
+<section id="closing">
+  <div class="wrap">
+    <div class="eyebrow reveal">التحقق النهائي</div>
+    <h2 class="sec-title reveal">كيف نعتبر العمل مكتملًا؟</h2>
+    <p class="sec-desc reveal">لا نعتبر أي مشكلة "تم حلها" لمجرد تعديل الكود — يجب التأكد من كل بند بعد كل إصلاح.</p>
+    <div class="check-grid reveal">
+      <div class="check-item"><span class="c">✓</span><p>الصفحة تعمل والروابط تعمل بشكل صحيح</p></div>
+      <div class="check-item"><span class="c">✓</span><p>السعر والخصم صحيحان ومتطابقان في كل مكان</p></div>
+      <div class="check-item"><span class="c">✓</span><p>المحتوى صحيح ولا توجد نسخ قديمة متبقية</p></div>
+      <div class="check-item"><span class="c">✓</span><p>البحث (Search) يعمل بشكل سليم</p></div>
+      <div class="check-item"><span class="c">✓</span><p>تجربة الهاتف (Mobile) سليمة</p></div>
+      <div class="check-item"><span class="c">✓</span><p>لا يوجد Error جديد بعد التعديل</p></div>
+      <div class="check-item"><span class="c">✓</span><p>SEO Metadata صحيحة وفريدة</p></div>
+      <div class="check-item"><span class="c">✓</span><p>Structured Data متوافقة مع المحتوى الظاهر</p></div>
+      <div class="check-item"><span class="c">✓</span><p>لا توجد مشكلة Regression في الوظائف الأساسية</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow reveal">أسئلة شائعة</div>
+    <h2 class="sec-title reveal">FAQ</h2>
+    <div id="faqList" class="reveal"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="fbrand">MEHJAM.COM</div>
+  <div class="fsub">Website Audit &amp; Improvement Report</div>
+  <div class="conf">CONFIDENTIAL CLIENT REPORT</div>
+  <div class="fmeta">Generated from the supplied audit findings — 19 September 2026</div>
+</footer>
+
+<button id="toTop" aria-label="العودة للأعلى">↑</button>
+
+<script>
+/* ============================================================
+   DATA — كل المحتوى مأخوذ حرفيًا من التقرير المرفق دون اختراع
+   ============================================================ */
+const ISSUES = [
+  {n:1,sev:'critical',cat:'الثقة والامتثال',title:'الادعاءات العلاجية أو الطبية غير الموثقة',
+    problem:'ظهرت عبارات مرتبطة بمشاكل جلدية أو نتائج علاجية، بالإضافة إلى عبارات مرتبطة بالترخيص أو الاعتماد.',
+    why:'أي ادعاء من هذا النوع يحتاج مستندًا أو مصدرًا رسميًا. محركات البحث وأنظمة الذكاء الاصطناعي قد تعيد عرض هذه العبارات كما هي.',
+    fix:'تصنيف كل عبارة إلى: معلومة مثبتة، معلومة تحتاج مستند، أو ادعاء يجب حذفه/إعادة صياغته.',
+    verify:'مراجعة صفحة المنتج والرئيسية والـ Meta والـ Structured Data بعد التعديل للتأكد من عدم بقاء نسخ قديمة.'},
+  {n:2,sev:'critical',cat:'GEO / الثقة',title:'ضعف إشارات الثقة',
+    problem:'نتيجة Trust Signals الحالية 0/15.',
+    why:'العميل يحتاج أن يعرف بسرعة من يقف خلف المتجر، وكيف يتواصل، وما سياسات الشحن والاسترجاع.',
+    fix:'إظهار رقم تواصل فعلي، واتساب إن توفر، بريد إلكتروني، بيانات النشاط، وصفحة من نحن والسياسات بوضوح.',
+    verify:'يفتح العميل الرئيسية ويصل لوسائل التواصل والسياسات خلال عدد قليل من النقرات دون بحث.'},
+  {n:3,sev:'high',cat:'الثقة',title:'معلومات التواصل غير واضحة',
+    problem:'بيانات التواصل والسياسات التي تساعد العميل على اتخاذ قرار الشراء غير ظاهرة بوضوح كافٍ.',
+    why:'غياب معلومات التواصل الواضحة يقلل الثقة ويصعّب على المستخدم ومحركات البحث فهم هوية النشاط.',
+    fix:'ترتيب وإظهار الهاتف/واتساب/البريد وبيانات النشاط بشكل ثابت في الموقع.',
+    verify:'التأكد من تطابق البيانات في جميع أجزاء الموقع.'},
+  {n:4,sev:'high',cat:'UI/UX',title:'روابط فارغة',
+    problem:'تم رصد روابط تحتوي على href فارغ في أجزاء من الصفحة.',
+    why:'الرابط الذي لا يؤدي لوجهة واضحة يسبب سلوكًا غير متوقع، وليس مفيدًا لقارئات الشاشة أو محركات البحث.',
+    fix:'ربط العنصر بالصفحة الصحيحة أو إزالة الرابط إن لم يعد له استخدام.',
+    verify:'مراجعة الصفحة بالكامل والتأكد أن كل رابط له وظيفة ووجهة صحيحة.'},
+  {n:5,sev:'high',cat:'SEO',title:'اختلاف Title عن H1',
+    problem:'هناك صفحات تحتاج تحسين العلاقة بين Title وH1.',
+    why:'التعارض بين العنوانين يربك محركات البحث حول موضوع الصفحة الحقيقي.',
+    fix:'جعل H1 واضحًا ومتوافقًا مع موضوع الصفحة، ومطابقًا لمضمون الـ Title.',
+    verify:'فحص الصفحات المهمة واحدة واحدة للتأكد من التطابق المنطقي.'},
+  {n:6,sev:'high',cat:'SEO',title:'Title طويل وتكرار اسم العلامة',
+    problem:'بعض العناوين طويلة وتحتوي على تكرار غير ضروري لاسم العلامة.',
+    why:'العنوان الطويل جدًا يُقصّ في نتائج البحث، والتكرار يهدر مساحة مفيدة.',
+    fix:'استخدام عنوان بسيط يشرح الصفحة أولًا، ثم إضافة اسم العلامة مرة واحدة فقط عند الحاجة (مثال: اسم المنتج | Mehjam).',
+    verify:'مراجعة أطوال العناوين للصفحات المهمة والتأكد من عدم التكرار.'},
+  {n:7,sev:'high',cat:'SEO',title:'Meta Descriptions مكررة',
+    problem:'103 صفحات بها Meta Description مكررة وفق التدقيق السابق.',
+    why:'الوصف المكرر يفقد قيمته في نتائج البحث ولا يميّز الصفحة عن غيرها.',
+    fix:'كتابة وصف مناسب لمحتوى كل صفحة، بالتركيز أولًا على المنتجات والتصنيفات والصفحات ذات الزيارات.',
+    verify:'إعادة الفحص للتأكد من انخفاض نسبة التكرار.'},
+  {n:8,sev:'medium',cat:'Performance / Accessibility',title:'تكرار شريط الإعلانات داخل DOM',
+    problem:'تكرار شريط الإعلان داخل الـ DOM بعدد كبير من العناصر.',
+    why:'وجود نسخ كثيرة من نفس العنصر يزيد حجم الصفحة ويؤثر على الأداء وAccessibility حتى لو بدا شكل الموقع طبيعيًا.',
+    fix:'مراجعة طريقة إنشاء الشريط داخل القالب وجعله يظهر بالطريقة اللازمة فقط.',
+    verify:'فحص DOM مرة أخرى والتأكد من عدم وجود تكرار غير ضروري.'},
+  {n:9,sev:'high',cat:'المحتوى',title:'الصفحة الرئيسية تحتوي على نص قليل',
+    problem:'الصفحة الرئيسية تعتمد بدرجة كبيرة على العناصر البصرية، بينما المحتوى النصي محدود.',
+    why:'المحتوى القليل يضعف فهم محركات البحث وأنظمة AI لطبيعة النشاط.',
+    fix:'إضافة محتوى بسيط يشرح من هو Mehjam، ماذا يقدم، وأهم مزايا تجربة الشراء، دون تحويلها لصفحة نصية طويلة.',
+    verify:'مراجعة طول ووضوح المحتوى بعد الإضافة.'},
+  {n:10,sev:'medium',cat:'Accessibility / SEO',title:'Alt Text غير وصفي',
+    problem:'استخدام نصوص عامة مثل "banner" لبعض الصور.',
+    why:'يفقد فرصة ظهور الصورة في البحث، ولا يفيد مستخدمي قارئات الشاشة.',
+    fix:'كتابة وصف مختصر للصور المهمة، دون الحاجة لوصف الصور الزخرفية فقط.',
+    verify:'مراجعة عينة من الصور المهمة والتأكد من وجود وصف مناسب.'},
+  {n:11,sev:'medium',cat:'Performance',title:'Placeholder images',
+    problem:'صور تظهر معها placeholder مثل s-empty.png بدل الصورة الحقيقية.',
+    why:'قد لا تُحمَّل الصورة الحقيقية بشكل صحيح لبعض الزوار أو محركات الزحف.',
+    fix:'التأكد من تحميل الصور الحقيقية بشكل صحيح في جميع الحالات.',
+    verify:'فحص صفحات المنتجات الرئيسية والتأكد من ظهور الصور الفعلية.'},
+  {n:12,sev:'high',cat:'SEO',title:'عدم توحيد أنماط الروابط',
+    problem:'اختلاف بعض أنماط الروابط الداخلية مقارنة بالـ Canonical، مع وجود 17 صفحة Redirected.',
+    why:'المرور بتحويل إضافي في كل مرة يهدر وقت التحميل ويشتت إشارة الصفحة بين نسختين.',
+    fix:'توحيد الروابط الداخلية على العناوين النهائية الصحيحة مباشرة.',
+    verify:'إعادة الفحص للتأكد من انخفاض عدد الـ Redirects الداخلية.'},
+  {n:13,sev:'medium',cat:'SEO',title:'تضخم صفحات الوسوم',
+    problem:'عدد الوسوم والصفحات الناتجة عنها يحتاج تنظيمًا، خصوصًا الصفحات الضعيفة القيمة.',
+    why:'كثرة الصفحات المتشابهة تشتت ميزانية الزحف وتزيد التكرار في المحتوى.',
+    fix:'الإبقاء على الوسوم المفيدة فعلًا، ودمج أو منع فهرسة الصفحات منخفضة القيمة حسب الحالة.',
+    verify:'مراجعة قائمة الوسوم بعد التنظيف والتأكد من بقاء المفيد منها فقط.'},
+  {n:14,sev:'critical',cat:'البيانات التجارية',title:'تعارض بيانات السعر والضريبة',
+    problem:'تم رصد تعارض في بعض بيانات السعر (السعر الأساسي، سعر البيع، سعر ما قبل الضريبة).',
+    why:'أي اختلاف بين السعر الظاهر والبيانات التقنية يسبب ارتباكًا وفقدان ثقة، وقد يظهر مختلفًا في خدمات خارجية.',
+    fix:'توحيد مصدر السعر والتأكد من تطابق جميع الحقول: الأساسي، البيع، قبل الضريبة، الضريبة، الخصم، الإجمالي، والـ Structured Data.',
+    verify:'اختبار عدة منتجات ومقارنة الأرقام بين صفحة المنتج والسلة والبيانات المنظمة.'},
+  {n:15,sev:'high',cat:'البيانات التجارية',title:'نسبة خصم غير متطابقة',
+    problem:'عدم تطابق نسبة الخصم المعروضة مع الحساب الفعلي في بعض الحالات.',
+    why:'نسبة الخصم غير الدقيقة تؤثر على مصداقية العرض التجاري.',
+    fix:'التأكد أن النسبة المعروضة ناتجة فعليًا من حساب السعرين المستخدمين.',
+    verify:'مراجعة نسبة الخصم على عدة منتجات بعد التصحيح.'},
+  {n:16,sev:'medium',cat:'Accessibility / SEO',title:'Heading hierarchy غير منظمة',
+    problem:'ترتيب العناوين (H1/H2/H3) يحتاج مراجعة في بعض الصفحات.',
+    why:'الترتيب غير المنطقي يربك قارئات الشاشة ومحركات البحث حول بنية الصفحة.',
+    fix:'ترتيب العناوين بشكل هرمي منطقي يعكس أهمية كل جزء من المحتوى.',
+    verify:'فحص بنية العناوين للصفحات المهمة بعد التعديل.'},
+  {n:17,sev:'critical',cat:'SEO',title:'صفحة بدون Title',
+    problem:'صفحة واحدة على الأقل تم الإبلاغ عنها بدون Title Tag.',
+    why:'غياب العنوان يفقد الصفحة فرصة الظهور المفهوم في نتائج البحث.',
+    fix:'تحديد الصفحة وإضافة عنوان فريد مناسب لمحتواها.',
+    verify:'إعادة فحص الصفحة والتأكد من ظهور عنوان صحيح.'},
+  {n:18,sev:'high',cat:'GEO / Structured Data',title:'Structured Data غير مكتملة',
+    problem:'نتيجة Structured Data الحالية 11/25.',
+    why:'البيانات المنظمة الناقصة تقلل فرصة ظهور نتائج غنية (Rich Results) وتضعف فهم AI للمحتوى.',
+    fix:'مراجعة الأنواع المناسبة فقط (Product، Offer، Organization، WebSite، BreadcrumbList، FAQPage عند وجود FAQ حقيقي) دون إضافة بيانات غير صحيحة.',
+    verify:'التأكد أن البيانات المضافة تمثل المحتوى الحقيقي للصفحة.'},
+  {n:19,sev:'high',cat:'GEO',title:'ضعف Content Clarity',
+    problem:'نتيجة Content Clarity الحالية 13/20.',
+    why:'وضوح المحتوى يساعد محركات البحث وأنظمة AI على فهم واستخدام معلومات الموقع كمصدر.',
+    fix:'جعل المعلومات الأساسية (النشاط، المنتجات، التواصل، الشحن، الاسترجاع، الأسئلة الشائعة) أكثر وضوحًا وتنظيمًا.',
+    verify:'مراجعة GEO Score بعد تحسين وضوح المحتوى.'},
+  {n:20,sev:'low',cat:'SEO',title:'صفحة Broken',
+    problem:'صفحة واحدة Broken وفق نتائج التدقيق.',
+    why:'الصفحات المعطلة تسبب تجربة سيئة للزائر وهدرًا لميزانية الزحف.',
+    fix:'تحديد الصفحة وإصلاحها أو إزالة الروابط المؤدية إليها.',
+    verify:'إعادة فحص الرابط للتأكد من عودته للعمل.'},
+];
+
+const UIUX = [
+  {t:'Homepage',p:'اعتماد كبير على العناصر البصرية مقابل محتوى نصي محدود.',s:'إضافة محتوى بسيط يشرح النشاط والمنتجات دون إطالة.'},
+  {t:'Header',p:'يحتاج مراجعة ليعكس بيانات التواصل بوضوح.',s:'إبراز وسيلة تواصل حقيقية ووضوح القائمة الرئيسية.'},
+  {t:'Navigation',p:'يجب أن تسهّل الوصول للتصنيفات والسياسات بسرعة.',s:'ترتيب الروابط المهمة (السياسات، من نحن) ضمن مسارات قريبة.'},
+  {t:'Footer',p:'موقع طبيعي لعرض السياسات وبيانات النشاط.',s:'التأكد من وجود كل الروابط المهمة وعدم تكرارها أو كسرها.'},
+  {t:'Product Cards',p:'يجب أن تعرض السعر والتوفر بوضوح دون التباس.',s:'مطابقة الأرقام المعروضة مع بيانات السعر الفعلية.'},
+  {t:'Product Pages',p:'تعارض بيانات السعر ونسبة الخصم مرصود في هذا القسم تحديدًا.',s:'توحيد بيانات السعر وإصلاح نسبة الخصم كأولوية.'},
+  {t:'Categories',p:'ازدواج بعض أنماط الروابط بين التصنيفات والـ Canonical.',s:'توحيد نمط الروابط الداخلية.'},
+  {t:'Filters',p:'يحتاج اختبارًا مباشرًا للتأكد من عملها بشكل صحيح.',s:'اختبار الفلاتر والتأكد من تحديث النتائج والرابط بشكل متوافق.'},
+  {t:'Cart',p:'يجب التأكد من وضوح السعر النهائي والشحن.',s:'مراجعة عرض الإجمالي والحفاظ على محتويات السلة عند حدوث خطأ.'},
+  {t:'Checkout',p:'خطوة حساسة تحتاج وضوحًا تامًا في الأسعار والرسائل.',s:'مراجعة رسائل الخطأ وتوضيح كل مرحلة من مراحل الدفع.'},
+  {t:'Mobile',p:'يجب أن يعمل الموقع بارتياح على الشاشات الصغيرة.',s:'اختبار عدم وجود Scroll أفقي، وسهولة الضغط على الأزرار ووضوح الأسعار.'},
+];
+
+const A11Y = [
+  {t:'ترتيب العناوين',p:'H1/H2/H3 يجب أن تتبع تسلسلًا منطقيًا في كل صفحة.'},
+  {t:'Alt Text',p:'وصف مختصر ومفيد للصور المهمة فقط.'},
+  {t:'Labels للحقول',p:'كل حقل إدخال يحتاج تسمية واضحة.'},
+  {t:'استخدام الكيبورد',p:'يجب أن يعمل الموقع بالكامل عبر لوحة المفاتيح.'},
+  {t:'Focus واضح',p:'حالة التركيز يجب أن تكون مرئية بوضوح عند التنقل.'},
+  {t:'أسماء الأزرار والأيقونات',p:'كل زر أو أيقونة تحتاج اسمًا مفهومًا لقارئ الشاشة.'},
+  {t:'دعم RTL',p:'التأكد من صحة اتجاه النص والعناصر في كل الصفحات.'},
+];
+
+const SEARCH_ROWS = [
+  ['البحث العربي','اسم منتج بالعربية','يحتاج اختبارًا مباشرًا لتأكيد الدقة'],
+  ['البحث الإنجليزي','اسم منتج بالإنجليزية','يحتاج اختبارًا مباشرًا لتأكيد الدقة'],
+  ['البحث المختلط','عربي وإنجليزي معًا','يحتاج اختبارًا مباشرًا'],
+  ['الأخطاء الإملائية','كلمة بها خطأ إملائي شائع','يحتاج اختبارًا مباشرًا'],
+  ['No Results','كلمة غير موجودة إطلاقًا','يجب أن تظهر رسالة واضحة وليست صفحة فارغة'],
+  ['الاقتراحات الفورية','ظهورها أثناء الكتابة إن كانت متوفرة','يحتاج تأكيدًا من داخل الكود/المنصة'],
+  ['الفلاتر والترتيب','تصفية وترتيب نتائج البحث','يحتاج اختبارًا مباشرًا'],
+  ['Mobile','ظهور حقل البحث وسهولة استخدامه على الهاتف','يحتاج اختبارًا مباشرًا'],
+  ['Keyboard','فتح البحث وتنفيذه عبر Enter من لوحة المفاتيح','يحتاج اختبارًا مباشرًا'],
+];
+
+const SEO_ROWS = [
+  ['Missing Title','صفحة واحدة بدون Title Tag','<span class="status-badge" style="background:rgba(230,71,63,.15);color:var(--critical)">Critical</span>'],
+  ['Duplicate Meta','103 صفحة بها Meta Description مكررة','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+  ['Title / H1','عدم تطابق في بعض الصفحات المهمة','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+  ['Canonical','ازدواج أنماط الروابط عن النسخة الكانونيكال','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+  ['Redirects','17 صفحة Redirected','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+  ['Broken URLs','صفحة واحدة Broken','<span class="status-badge" style="background:rgba(79,159,230,.15);color:var(--low)">Low</span>'],
+  ['Low Content','110 صفحة بمحتوى قليل','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+  ['Tags','تضخم صفحات الوسوم يحتاج تنظيمًا','<span class="status-badge" style="background:rgba(230,209,63,.15);color:#e2c93f">Medium</span>'],
+  ['Alt Text','نصوص غير وصفية على بعض الصور','<span class="status-badge" style="background:rgba(230,209,63,.15);color:#e2c93f">Medium</span>'],
+  ['Structured Data','11/25 — غير مكتملة','<span class="status-badge" style="background:rgba(230,146,63,.15);color:var(--high)">High</span>'],
+];
+
+const FAQS = [
+  {q:'هل التقرير يعني أن الموقع سيئ؟',a:'لا. الأرقام توضح مساحة واضحة للتحسين، لكنها لا تعني أن الموقع غير صالح للاستخدام. الموقع لديه أساس جيد ويمكن تحسينه بشكل واضح.'},
+  {q:'ما أهم شيء نبدأ به؟',a:'الثقة ودقة المعلومات أولًا (الادعاءات، بيانات التواصل)، ثم السعر والخصم والبيانات التجارية، قبل الانتقال إلى SEO التقني والمحتوى.'},
+  {q:'هل كل المشاكل تحتاج تعديل كود؟',a:'لا. بعض المشاكل (مثل الادعاءات أو Meta Description) تُحل بتعديل المحتوى، بينما مشاكل أخرى (مثل تكرار شريط الإعلانات أو أنماط الروابط) تحتاج مراجعة داخل القالب.'},
+  {q:'هل بعض المشاكل تخص Salla نفسها؟',a:'بعض العناصر التقنية للموقع مرتبطة ببنية المنصة، ويجب التمييز بين ما يمكن تعديله عبر لوحة التحكم أو القالب، وما هو جزء من بنية المنصة الأساسية.'},
+  {q:'هل النتائج مضمونة في محركات AI؟',a:'لا يوجد أي ضمان للظهور في ChatGPT أو Google AI أو أي نظام مشابه. الهدف هو تحسين وضوح المعلومات وقابليتها للفهم والاستشهاد، وليس ضمان ظهور محدد.'},
+  {q:'كيف نعرف أن الإصلاح تم بنجاح؟',a:'من خلال معايير الإغلاق الموضحة في القسم المخصص: عمل الصفحة والروابط، صحة السعر والخصم، عمل البحث والهاتف، وعدم وجود أخطاء جديدة أو Regression.'},
+];
+
+/* ============ RENDER ============ */
+function sevLabel(s){return {critical:'Critical',high:'High',medium:'Medium',low:'Low'}[s];}
+
+function renderIssues(filter){
+  const grid = document.getElementById('issuesGrid');
+  grid.innerHTML = '';
+  ISSUES.filter(i => filter==='all' || i.sev===filter).forEach(i=>{
+    const card = document.createElement('div');
+    card.className = 'issue-card reveal';
+    card.innerHTML = `
+      <div class="issue-top">
+        <span class="issue-num">#${String(i.n).padStart(2,'0')}</span>
+        <span class="badge ${i.sev}">${sevLabel(i.sev)}</span>
+      </div>
+      <h3>${i.title}</h3>
+      <div class="issue-cat">${i.cat}</div>
+      <div class="field"><b>المشكلة</b><p>${i.problem}</p></div>
+      <details>
+        <summary>لماذا تهم ولماذا الحل والتحقق</summary>
+        <div class="field" style="margin-top:12px"><b>لماذا تهم</b><p>${i.why}</p></div>
+        <div class="field"><b>الحل المقترح</b><p>${i.fix}</p></div>
+        <div class="field"><b>طريقة التأكد</b><p>${i.verify}</p></div>
+      </details>
+    `;
+    grid.appendChild(card);
+  });
+  requestAnimationFrame(setupReveal);
+}
+
+function renderSimpleCards(list, targetId){
+  const grid = document.getElementById(targetId);
+  grid.innerHTML = list.map(x=>`
+    <div class="mini-card">
+      <h4>${x.t}</h4>
+      <p><b style="color:var(--text-faint);font-weight:600">المشكلة: </b>${x.p}</p>
+      ${x.s ? `<p style="margin-top:8px"><b style="color:var(--gold);font-weight:600">الحل: </b>${x.s}</p>` : ''}
+    </div>
+  `).join('');
+}
+
+function renderTable(rows, targetId, cols3){
+  const body = document.getElementById(targetId);
+  body.innerHTML = rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('');
+}
+
+function renderFaq(){
+  const list = document.getElementById('faqList');
+  list.innerHTML = FAQS.map((f,idx)=>`
+    <div class="faq-item" data-idx="${idx}">
+      <div class="faq-q">${f.q}<span class="plus">+</span></div>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>item.classList.toggle('open'));
+  });
+}
+
+/* filters */
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    renderIssues(chip.dataset.filter);
+  });
+});
+
+/* init render */
+renderIssues('all');
+renderSimpleCards(UIUX,'uiuxGrid');
+renderSimpleCards(A11Y,'a11yGrid');
+renderTable(SEARCH_ROWS,'searchTable');
+renderTable(SEO_ROWS,'seoTable');
+renderFaq();
+
+/* dial rings */
+document.querySelectorAll('.dial').forEach(d=>{
+  const val = parseFloat(d.dataset.value);
+  const max = parseFloat(d.dataset.max || 100);
+  const pct = Math.max(0, Math.min(1, val/max));
+  const circ = 2*Math.PI*46;
+  const ring = d.querySelector('.ring');
+  ring.style.strokeDasharray = circ;
+  ring.style.strokeDashoffset = circ - pct*circ;
+});
+
+/* watermark generation */
+(function(){
+  const wm = document.getElementById('watermark');
+  for(let i=0;i<28;i++){
+    const s = document.createElement('span');
+    s.textContent = 'MEHJAM.COM — CONFIDENTIAL REPORT';
+    wm.appendChild(s);
+  }
+})();
+
+/* scroll progress + reveal + active nav + back to top */
+const scrollbarFill = document.getElementById('scrollbarFill');
+const toTop = document.getElementById('toTop');
+function onScroll(){
+  const h = document.documentElement;
+  const pct = (h.scrollTop)/(h.scrollHeight - h.clientHeight) * 100;
+  scrollbarFill.style.width = pct + '%';
+  toTop.classList.toggle('show', h.scrollTop > 600);
+
+  let current = '';
+  document.querySelectorAll('section[id]').forEach(sec=>{
+    const rect = sec.getBoundingClientRect();
+    if(rect.top <= 120 && rect.bottom >= 120) current = sec.id;
+  });
+  document.querySelectorAll('nav.links a').forEach(a=>{
+    a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+  });
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+
+function setupReveal(){
+  const els = document.querySelectorAll('.reveal:not(.in)');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  els.forEach(el=>io.observe(el));
+}
+setupReveal();
+
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* mobile menu */
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* print */
+function doPrint(){ window.print(); }
+document.getElementById('printBtn').addEventListener('click', doPrint);
+document.getElementById('printBtn2').addEventListener('click', doPrint);
+
+/* search inside report */
+const SEARCH_INDEX = [
+  ...ISSUES.map(i=>({label:'مشكلة #'+i.n+' — '+i.title, href:'#issues'})),
+  {label:'نظرة عامة', href:'#overview'},
+  {label:'UI/UX', href:'#uiux'},
+  {label:'البحث الداخلي', href:'#search'},
+  {label:'SEO', href:'#seo'},
+  {label:'GEO', href:'#geo'},
+  {label:'Accessibility', href:'#accessibility'},
+  {label:'Performance', href:'#performance'},
+  {label:'الثقة', href:'#trust'},
+  {label:'الأسعار والمنتجات', href:'#pricing'},
+  {label:'خطة العمل', href:'#roadmap'},
+  {label:'معايير الإغلاق', href:'#closing'},
+  {label:'أسئلة شائعة', href:'#faq'},
+];
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+searchInput.addEventListener('input',()=>{
+  const q = searchInput.value.trim().toLowerCase();
+  if(!q){ searchResults.classList.remove('show'); return; }
+  const matches = SEARCH_INDEX.filter(x=>x.label.toLowerCase().includes(q)).slice(0,8);
+  searchResults.innerHTML = matches.length
+    ? matches.map(m=>`<a href="${m.href}">${m.label}</a>`).join('')
+    : `<div class="empty">لا توجد نتائج مطابقة</div>`;
+  searchResults.classList.add('show');
+});
+document.addEventListener('click',(e)=>{
+  if(!e.target.closest('.report-search')) searchResults.classList.remove('show');
+});
+searchResults.addEventListener('click',(e)=>{
+  const a = e.target.closest('a');
+  if(a){ searchInput.value=''; searchResults.classList.remove('show'); }
+});
+
+/* ============ deterrence (not a real protection) ============ */
+document.addEventListener('contextmenu', e=>e.preventDefault());
+document.addEventListener('dragstart', e=>e.preventDefault());
+document.addEventListener('keydown', e=>{
+  const k = e.key.toLowerCase();
+  if((e.ctrlKey||e.metaKey) && ['c','u','s'].includes(k)){
+    // Ctrl+P (print) is intentionally allowed since we provide a Print/PDF action
+    e.preventDefault();
+  }
+});
+</script>
+</body>
+</html>
