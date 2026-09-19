@@ -66,10 +66,9 @@ body{
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-img{max-width:100%;display:block;-webkit-user-drag:none;user-select:none;pointer-events:none;}
+img{max-width:100%;display:block;}
 a{color:inherit;}
-::selection{background:transparent;}
-body.no-select{user-select:none;}
+::selection{background:rgba(212,169,79,.35);color:#fff;}
 
 /* background texture */
 body::before{
@@ -81,17 +80,6 @@ body::before{
 }
 .grain{position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* watermark deterrence */
-.watermark{
-  position:fixed;inset:0;z-index:5;pointer-events:none;
-  display:grid;grid-template-columns:repeat(4,1fr);gap:60px;
-  padding:40px;opacity:.035;transform:rotate(-18deg) scale(1.4);
-}
-.watermark span{
-  font-family:var(--font-head);font-weight:700;font-size:14px;
-  white-space:nowrap;color:#fff;
 }
 
 /* progress bar */
@@ -326,12 +314,6 @@ tbody tr:hover{background:var(--surface-hover);}
 .tl-item li{margin-bottom:6px;}
 .tl-result{margin-top:14px;padding:12px 16px;border-radius:10px;background:var(--bg-soft);font-size:13px;color:var(--text-faint);}
 
-/* screenshots gallery placeholder */
-.gallery-placeholder{
-  border:1.5px dashed var(--border-strong);border-radius:var(--radius);padding:60px 30px;text-align:center;color:var(--text-faint);
-}
-.gallery-placeholder .ic{font-size:34px;margin-bottom:14px;}
-
 /* faq */
 .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
 .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:600;font-family:var(--font-head);font-size:16px;}
@@ -376,7 +358,7 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
 /* print */
 @media print{
   body{background:#fff !important;color:#000 !important;}
-  .watermark,#scrollbar,header.topnav,#toTop,.hero-cta,.grain,.mobile-toggle{display:none !important;}
+  #scrollbar,header.topnav,#toTop,.hero-cta,.grain,.mobile-toggle{display:none !important;}
   section{padding:18px 0 !important; break-inside:avoid;}
   .kpi,.issue-card,.mini-card,.tl-item,.sev-card,.dial-card,.ba-col,.notice,.check-item{
     background:#fff !important;border:1px solid #ccc !important;color:#000 !important;box-shadow:none !important;
@@ -390,10 +372,9 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
 }
 </style>
 </head>
-<body class="no-select">
+<body>
 
 <div class="grain"></div>
-<div class="watermark" id="watermark"></div>
 <div id="scrollbar"><i id="scrollbarFill"></i></div>
 
 <header class="topnav">
@@ -668,18 +649,6 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
         </ul>
         <div class="ba-note">النتيجة المستهدفة بعد التنفيذ — وليست نتائج تم تحقيقها فعليًا.</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SCREENSHOTS ============ -->
-<section>
-  <div class="wrap">
-    <div class="eyebrow reveal">أدلة بصرية</div>
-    <h2 class="sec-title reveal">Screenshots</h2>
-    <div class="gallery-placeholder reveal">
-      <div class="ic">🖼</div>
-      <p>سيتم إضافة Screenshots بعد توثيق الإصلاحات.</p>
     </div>
   </div>
 </section>
@@ -1034,16 +1003,6 @@ document.querySelectorAll('.dial').forEach(d=>{
   ring.style.strokeDashoffset = circ - pct*circ;
 });
 
-/* watermark generation */
-(function(){
-  const wm = document.getElementById('watermark');
-  for(let i=0;i<28;i++){
-    const s = document.createElement('span');
-    s.textContent = 'MEHJAM.COM — CONFIDENTIAL REPORT';
-    wm.appendChild(s);
-  }
-})();
-
 /* scroll progress + reveal + active nav + back to top */
 const scrollbarFill = document.getElementById('scrollbarFill');
 const toTop = document.getElementById('toTop');
@@ -1119,17 +1078,6 @@ document.addEventListener('click',(e)=>{
 searchResults.addEventListener('click',(e)=>{
   const a = e.target.closest('a');
   if(a){ searchInput.value=''; searchResults.classList.remove('show'); }
-});
-
-/* ============ deterrence (not a real protection) ============ */
-document.addEventListener('contextmenu', e=>e.preventDefault());
-document.addEventListener('dragstart', e=>e.preventDefault());
-document.addEventListener('keydown', e=>{
-  const k = e.key.toLowerCase();
-  if((e.ctrlKey||e.metaKey) && ['c','u','s'].includes(k)){
-    // Ctrl+P (print) is intentionally allowed since we provide a Print/PDF action
-    e.preventDefault();
-  }
 });
 </script>
 </body>
