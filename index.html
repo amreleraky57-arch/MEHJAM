@@ -66,9 +66,15 @@ body{
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-img{max-width:100%;display:block;}
+img{max-width:100%;display:block;-webkit-user-drag:none;}
 a{color:inherit;}
 ::selection{background:rgba(212,169,79,.35);color:#fff;}
+body.protected{
+  -webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;
+}
+body.protected input,body.protected textarea{
+  -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;
+}
 
 /* background texture */
 body::before{
@@ -81,6 +87,19 @@ body::before{
 .grain{position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/* background watermark — light, non-intrusive, tiled */
+.bg-watermark{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:90px;
+  padding:60px;opacity:.028;transform:rotate(-20deg) scale(1.5);
+  overflow:hidden;
+}
+.bg-watermark span{
+  font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:.5px;
+  white-space:nowrap;color:#fff;
+}
+main,header,section,footer{position:relative;z-index:1;}
 
 /* progress bar */
 #scrollbar{position:fixed;top:0;right:0;left:0;height:3px;z-index:1000;background:transparent;}
@@ -358,7 +377,10 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
 /* print */
 @media print{
   body{background:#fff !important;color:#000 !important;}
+  body.protected{user-select:text !important;-webkit-user-select:text !important;}
   #scrollbar,header.topnav,#toTop,.hero-cta,.grain,.mobile-toggle{display:none !important;}
+  .bg-watermark{opacity:.05 !important;}
+  .bg-watermark span{color:#000 !important;}
   section{padding:18px 0 !important; break-inside:avoid;}
   .kpi,.issue-card,.mini-card,.tl-item,.sev-card,.dial-card,.ba-col,.notice,.check-item{
     background:#fff !important;border:1px solid #ccc !important;color:#000 !important;box-shadow:none !important;
@@ -369,12 +391,14 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
   h1,h2,h3,h4{color:#000 !important;-webkit-text-fill-color:#000 !important;}
   p,td,th,li{color:#111 !important;}
   .hero{min-height:auto;padding:20px 0;}
+  footer .fmeta{color:#333 !important;}
 }
 </style>
 </head>
-<body>
+<body class="protected">
 
 <div class="grain"></div>
+<div class="bg-watermark" id="bgWatermark"></div>
 <div id="scrollbar"><i id="scrollbarFill"></i></div>
 
 <header class="topnav">
@@ -748,6 +772,7 @@ footer .conf{display:inline-block;margin:18px 0;padding:6px 16px;border-radius:9
   <div class="fsub">Website Audit &amp; Improvement Report</div>
   <div class="conf">CONFIDENTIAL CLIENT REPORT</div>
   <div class="fmeta">Generated from the supplied audit findings — 19 September 2026</div>
+  <div class="fmeta" style="margin-top:10px;opacity:.65;">Powered by <b style="color:var(--gold);font-weight:700;">Amr Eleraky</b></div>
 </footer>
 
 <button id="toTop" aria-label="العودة للأعلى">↑</button>
@@ -1002,6 +1027,56 @@ document.querySelectorAll('.dial').forEach(d=>{
   ring.style.strokeDasharray = circ;
   ring.style.strokeDashoffset = circ - pct*circ;
 });
+
+/* background watermark generation (deterrence only, not real DRM) */
+(function(){
+  const wm = document.getElementById('bgWatermark');
+  for(let i=0;i<24;i++){
+    const s = document.createElement('span');
+    s.textContent = 'Powered by Amr Eleraky';
+    wm.appendChild(s);
+  }
+})();
+
+/* ============================================================
+   Copy deterrence — best-effort only.
+   This CANNOT block screenshots, screen recording, or DevTools
+   with certainty: browsers always allow the user ultimate control.
+   Print (Ctrl+P / زر الطباعة) and all inputs remain fully usable.
+   ============================================================ */
+(function(){
+  const isFormField = (el) => el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable);
+
+  document.addEventListener('contextmenu', e=>{
+    if(!isFormField(e.target)) e.preventDefault();
+  });
+
+  document.addEventListener('dragstart', e=>{
+    if(e.target.tagName === 'IMG') e.preventDefault();
+  });
+
+  document.addEventListener('copy', e=>{
+    if(!isFormField(e.target)) e.preventDefault();
+  });
+
+  document.addEventListener('keydown', e=>{
+    const k = e.key.toLowerCase();
+    const ctrl = e.ctrlKey || e.metaKey;
+
+    // Allow printing always
+    if(ctrl && k === 'p') return;
+
+    // Allow typing normally inside inputs / search box
+    if(isFormField(e.target)) return;
+
+    // Deter copy / select-all / cut / view-source
+    if(ctrl && ['c','a','x','u'].includes(k)){ e.preventDefault(); return; }
+
+    // Deter common DevTools shortcuts (best-effort only)
+    if(k === 'f12'){ e.preventDefault(); return; }
+    if(ctrl && e.shiftKey && ['i','j','c'].includes(k)){ e.preventDefault(); return; }
+  });
+})();
 
 /* scroll progress + reveal + active nav + back to top */
 const scrollbarFill = document.getElementById('scrollbarFill');
